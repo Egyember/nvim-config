@@ -1,0 +1,10 @@
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.mouse = "a"
+vim.o.autoindent = true
+vim.o.title = true
+vim.o.clipboard = "unnamedplus"
+vim.o.backspace = "indent,eol,start"
+vim.o.linebreak = true
+vim.o.wrap = false
+vim.o.scrolloff=5
