@@ -1,4 +1,5 @@
 local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
   sources = {
@@ -34,7 +35,10 @@ cmp.setup({
     end),
  -- scroll up and down the documentation window
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-d>'] = cmp.mapping.scroll_docs(4),  
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    -- Navigate between snippet placeholder
+    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
   },
   snippet = {
     expand = function(args)

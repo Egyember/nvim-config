@@ -43,7 +43,8 @@ settings = {
 --cmd = {"gopls", "-logfile", "./log", "-rpc.trace"}
 })
 require'lspconfig'.clangd.setup{
-	filetypes = { "c", "cpp", "cc","cl"}
+	filetypes = { "c", "cpp", "cc","cl"},
+        cmd = { "clangd", "--query-driver=~/.espressif/tools/xtensa-esp32-elf/esp-2020r3-8.4.0/**/bin/xtensa-esp32-elf-*" }, --esp stuf
 }
 
 require'lspconfig'.lua_ls.setup{}
