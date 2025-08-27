@@ -3,7 +3,7 @@ local lsp_zero = require('lsp-zero')
 lsp_zero.preset('recommended')
 
 lsp_zero.set_preferences({
-    suggest_lsp_servers = ture,
+    suggest_lsp_servers = true,
     sign_icons = {
         error = 'E',
         warn = 'W',
@@ -44,12 +44,25 @@ settings = {
 })
 require'lspconfig'.clangd.setup{
 	filetypes = { "c", "cpp", "cc","cl"},
-        cmd = { "clangd", "--query-driver=~/.espressif/tools/xtensa-esp32-elf/esp-2020r3-8.4.0/**/bin/xtensa-esp32-elf-*" }, --esp stuf
+        cmd = { "clangd", "--query-driver=~/.espressif/tools/xtensa-esp32-elf/esp-13.2.0_20240530/**/bin/xtensa-esp32-elf-* -Wno-unknown-warning-option" }, --esp stuf
 }
 
+--[[
+require'lspconfig'.ccls.setup{
+	filetypes = { "c", "cpp", "cc","cl"},
+	init_options = {
+		cache = {
+			directory = ".ccls-cache";
+		};
+	}
+}
+
+]]--
 require'lspconfig'.lua_ls.setup{}
 
 require'lspconfig'.jedi_language_server.setup{}
+
+require'lspconfig'.jdtls.setup{}
 
 lsp_zero.setup()
 
@@ -76,3 +89,4 @@ lsp_zero.setup()
     vim.lsp.buf.format({async = false})
   end
 })
+
