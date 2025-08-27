@@ -1,4 +1,7 @@
-vim.keymap.set( 'n', 'é', '$')
+--vim.keymap.set( 'n', 'Ú', '}')
+--vim.keymap.set( 'n', 'Ő', '{')
+vim.o.langmap = "é$,ő[,ú],Ő{,Ú}"
+vim.keymap.set( 'n', 'Ő', '{')
 vim.keymap.set( 'n', "<Space>", "<Nop>", { silent = true})
 vim.g.mapleader = " "
 --undotree
