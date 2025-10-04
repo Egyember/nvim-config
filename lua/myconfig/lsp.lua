@@ -64,6 +64,8 @@ require'lspconfig'.jedi_language_server.setup{}
 
 require'lspconfig'.jdtls.setup{}
 
+require'lspconfig'.csharp_ls.setup{}
+
 lsp_zero.setup()
 
 --gopls setup
